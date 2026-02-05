@@ -1,0 +1,127 @@
+/* Full-page background */
+
+.home-bg {
+    min-height: 100vh;
+    margin: 1;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-image: url('/it.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* Dark overlay for readability */
+    position: relative;
+}
+
+
+/* Overlay effect */
+
+.home-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(221, 224, 228, 0.65);
+    z-index: 0;
+}
+
+
+/* Make content appear above overlay */
+
+header,
+section,
+footer {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Header */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(236, 6, 6, 0.5);
+}
+
+.logo {
+    height: 55px;
+}
+
+.nav a {
+    color: #131413;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav a:hover {
+    color: #fa0a0aee;
+}
+
+
+/* Hero section */
+
+.hero {
+    text-align: center;
+    color: #1c05e9;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+
+/* Courses */
+
+.courses {
+    padding: 50px;
+    text-align: center;
+    color: #e7eb14;
+}
+
+.course-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.course-card {
+    background: rgba(19, 180, 5, 0.897);
+    backdrop-filter: blur(6px);
+    border-radius: 15px;
+    padding: 25px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 0, 0, 0.4);
+}
+
+.course-card span {
+    font-size: 2.2rem;
+}
+
+.course-card h3 {
+    margin: 10px 0;
+}
+
+
+/* Footer */
+
+.footer {
+    text-align: center;
+    padding: 15px;
+    color: #d1eef7;
+    background: rgba(0, 0, 0, 0.6);
+}
